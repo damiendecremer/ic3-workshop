@@ -58,14 +58,9 @@ rankhist.tests <- function(rank.hist) {
 #   * rank.hist ... a vector of rank counts (see function `rankhist()`
 #
 # Return value:
-#   * a list with the following elements
-#     + pearson ... a dataframe with the pearson chi^2 test statistic 
-#                   and its p-value under the chi^2 distribution with 
-#                   K degrees of freedom
-#     + jolliffe.primo ... a data frame, each column has the test 
-#                          statistic and p-value of tests for a specific 
-#                          alternative, namely for a sloped and convex
-#                          rank histogram
+#   * a dataframe with:
+#     + rows    ... test.statistic, p-value
+#     + columns ... pearson chi^2, jolliffe-primo slope, jolliffe-primo convex
 #
 # Author: 
 #
