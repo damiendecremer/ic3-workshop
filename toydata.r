@@ -1,4 +1,4 @@
-stopifnot(require(boot))  # bootstrapping
+#stopifnot(require(boot))  # bootstrapping
 #stopifnot(require(ape))   # minimum spanning tree
 #stopifnot(require(abind)) # multidimensional arrays 
 

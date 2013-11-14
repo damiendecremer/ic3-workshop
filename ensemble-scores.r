@@ -72,7 +72,7 @@ function(ens, ens.ref, ver, tau=0.5, n.boot=500) {
   quantls <- quantile(test.out[["t"]], c(0.01, 0.05, 0.1, 0.9, 0.95, 0.99))
   #return
   ret.df <- c(br.diff, p.value, quantls)
-  names(ret.df) <- c("fair.brier.diff", "p.value", paste0("Q", c(0.01, 0.05, 0.1, 0.9, 0.95, 0.99)))
+  names(ret.df) <- c("fair.brier.diff", "p.value", paste("Q", c(0.01, 0.05, 0.1, 0.9, 0.95, 0.99), sep=""))
   return(ret.df)
 }
 
@@ -175,6 +175,6 @@ function(ens, ens.ref, ver, n.boot=500) {
   quantls <- quantile(test.out[["t"]], c(0.01, 0.05, 0.1, 0.9, 0.95, 0.99))
   #return
   ret.df <- c(crps.diff, p.value, quantls)
-  names(ret.df) <- c("fair.crps.diff", "p.value", paste0("Q", c(0.01, 0.05, 0.1, 0.9, 0.95, 0.99)))
+  names(ret.df) <- c("fair.crps.diff", "p.value", paste("Q", c(0.01, 0.05, 0.1, 0.9, 0.95, 0.99), sep=""))
   return(ret.df)
 }

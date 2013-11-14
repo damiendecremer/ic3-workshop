@@ -284,7 +284,7 @@ AnalyzeRankhistDifference <- function(ens, ens.ref, ver, n.boot=500) {
 
   # return
   ret.df <- cbind(score.diffs, p.values, quantls)
-  colnames(ret.df) <- c("score.diff", "p.value", paste0("Q", c(0.01, 0.05, 0.1, 0.9, 0.95, 0.99)))
+  colnames(ret.df) <- c("score.diff", "p.value", paste("Q", c(0.01, 0.05, 0.1, 0.9, 0.95, 0.99), sep=""))
   rownames(ret.df) <- c("pearson.chi2", "jp.slope", "jp.convex")
   ret.df
 }
