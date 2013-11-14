@@ -1,4 +1,4 @@
-#stopifnot(require(boot))  # bootstrapping
+stopifnot(require(boot))  # bootstrapping
 #stopifnot(require(ape))   # minimum spanning tree
 #stopifnot(require(abind)) # multidimensional arrays 
 
@@ -32,7 +32,7 @@ GenerateToyData <- function(mu.ens=0, sd.ens=1,
 #     + ver ... a vector of Gaussian variables drawn from N(mu.ver, sd.ver)
 #     + ens ... a N*K matrix, each row is an ensemble drawn from N(mu.ens, sd.ens)
 #     + ens.ref ...  a N*K.ref matrix, each row is an ensemble drawn from
-#       N(mu.ref, sd.ref); only returned if is.na(mu.ref) & is.na(sd.ref)
+#       N(mu.ref, sd.ref); only returned if neither of mu.ref and sd.ref is NA
 #
 # Author:
 #   Stefan Siegert 
@@ -50,8 +50,8 @@ GenerateToyData <- function(mu.ens=0, sd.ens=1,
 {
   if (is.na(mu.ref) | is.na(sd.ref)) {
     l <- list(
-        ens=matrix(rnorm(N*K, mu.ens, sd.ens), N, K),
-        ver=rnorm(N, mu.ver, sd.ver))
+        ens = matrix(rnorm(N*K, mu.ens, sd.ens), N, K),
+        ver = rnorm(N, mu.ver, sd.ver))
   } else {
     l <- list(
         ens = matrix(rnorm(N*K, mu.ens, sd.ens), N, K),
